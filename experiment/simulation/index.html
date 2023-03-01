@@ -1,13 +1,347 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<meta charset="UTF-8">
+<title>SOLVE</title>
+<script language="JavaScript" type="text/javascript" src="js/jquerymin.js"></script>
+<link rel="stylesheet" href="css/vane.css" />
+<script type="text/javascript" src="js/vane.js"></script>
+<script type="text/javascript" src= "js/ej.web.all.js"></script>
+<script>
+var simsubscreennum=0;
+var temp=0;
+</script>
+<style>
+.popup
+{
+	border-radius:5px;
+	background-color:black;
+	color:white;
+	padding:5px;
+}
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  left:102px;
+  visibility: hidden;
+  width: 550px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 100;
+  <!-- text-align:center; -->
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
+</head>
+
+<body style="margin:0; font-family:verdana;">
+<div id="simscreen">
+<div id="title"><h3>VANE SHEAR TEST</h3></div>
+
+<div class="simsubscreen" id="canvas0" >
+	<h4 class="incanvas">Objective:</h4>
+	<p class="incanvas" style="font-size:14px;">To determine the shear strength of soft sensitive clay by using the Vane Shear test.</p><br/>
+	<h4 class="incanvas">Apparatus used:</h4>
+	<p class="incanvas" style="font-size:14px;">Vane Shear Apparatus, Metal tube, Measuring scale, Straight edge tool, Weighing balance etc.</p>
+	<img style="position:absolute; left:0px; top:190px;" title = "" src="images/human.png" />
+	<img style="position:absolute; left:150px; top:320px;" title = "Table" src="images/table.png" />
+	<img style="position:absolute; left:530px; top:322.5px; width:7%; " title = "Metal tube" src="images/tin.png" />
+	<img style="position:absolute; left:380px; top:200px; width:15%; " title = "Vane test apparatus.png" src="images/vaneShear1.png" />
+	<img style="position:absolute; left:190px; top:280px; width:18%;"  title = "Weighing Machine" src="images/wm1.png" />
+	&nbsp;<span class="tooltip" style="border-bottom:1px dotted ; color:red; top:20px; cursor:pointer;"><strong>Description</strong>
+	<span  class="tooltiptext" style="font-size:14px; text-align:justify; line-height:1.5; letter-spacing:0.2px;"><strong style="color:red;">Vane shear test</strong> is one of the most common in situ methods of testing, adopted to find out the undrained compressive strength of the soil for the present site conditions.</span></span>
+</div>
+
+
+<div class="simsubscreen" id="canvas1" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;1&nbsp;</span>
+	<p class="steptext">&nbsp;Take the clay sample in a container and mix it with water until a fine paste is formed.</p>
+	<div id="5-14" style="position:absolute; left:230px; top:390px; width:79px; height:23px; background-color:#BB834C; border-radius: 100px / 30px; visibility:hidden;"></div>
+	<div id="5-10" style="position:absolute; left:229px; top:435px; width:79px; height:21px; background-color:#A4DDEC; border-radius: 100px / 30px;"></div>
+	<div id="5-11" style="position:absolute; left:207px; top:410px; width:135px; height:60px; background-color:#FFFFFF;"></div>
+	<div id="5-3" style="position:absolute; left: 338px; top:405.75px; width:91px; height:140px; background-color:#A4DDEC; visibility:hidden;"></div>
+
+	<img id="5-7" style="position: absolute; left: 233.5px; top: 394px; width:75px; height:20px;" src="images/residual.png"/>
+	<img id="5-8" style="position: absolute; left: 225px; top: 380.25px; " src="images/plate.png"/>
+
+	<img id="5-12" style="position:absolute; left:150px; top:275px; visibility:hidden; cursor:pointer;" src="images/spatula.png"/>
+	<img id="5-13" style="position:absolute; left:240px; top: 292.5px; visibility:hidden;" src="images/trowel2.png"/>
+
+	<img id="5-9" style="position:absolute; left:255px; top:377px; visibility:hidden;" src="images/wa.png"/>
+
+	<img id="5-5" style="position:absolute; left: 390px; top:208px;  cursor:pointer;" src="images/msrdev1.png"/>
+	<img id="5-6" style="position:absolute; left:275px; top:305px; visibility:hidden;" src="images/msrdev2.png"/>
+</div>
+
+<div id="canvas2" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;2&nbsp;</span>
+	<p class="steptext">&nbsp; Measure the weight of empty metal tube.</p>
+	<img id="6-0" style="position:absolute; left:275px; top:300px;" src="images/wm1.png" />
+	<img id="6-0on" style="position:absolute; left:335px; top:420px;" src="images/on.png" />
+	<img id="6-1" style="position:absolute; left:440px; top:420px;" src="images/tare.png" />
+	<img id="6-2" style="position:absolute; left:70px; top:385px;" src="images/tin.png" />
+	<p id="p6-1" style="position:absolute; left:378px; top:375px;"></p>
+	<p id="p6-2" style="position:absolute; left:20px; top:480px; font-size:14px;">Weight of empty metal tube = _________ g</p>
+</div>
+
+<div id="canvas3" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;3&nbsp;</span>
+	<p class="steptext">&nbsp;Fill the metal tube with the wet soil sample.</p>
+	<div id="7-0" style="position:absolute; left:210px; top:390px; width:79px; height:23px; background-color:#BB834C; border-radius: 100px / 30px; "></div>
+	<img id="7-1" style="position: absolute; left: 450px; top: 360.5px;" src="images/tin.png"/>
+	<img id="7-2" style="position:absolute; left: 205px; top: 380.25px;" src="images/plate.png" />
+	<!-- <div id="7-5" style="position:absolute; left: 470.5px; top: 360.5px; width: 40.5px; height: 15px; background-color:#BB834C; border-radius:50%; visibility:hidden;"></div> -->
+	<div id="7-5" style="position:absolute; left: 469px; top: 360.5px; width: 43.5px; height: 16px; background-color:#BB834C; border-radius:50%; visibility:hidden;"></div>
+	<img id="7-3" style="position:absolute; left:150px; top:275px; cursor:pointer; visibility:hidden;" src="images/spoon.png"/>
+	<img id="7-4" style="position:absolute; left:145px; top:355px; cursor:pointer; visibility:hidden;" src="images/spoonWithSoil.png"/>
+</div>
+
+<div id="canvas4" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;4&nbsp;</span>
+	<p class="steptext">&nbsp;Level the sample in the metal tube using a straight edge tool.</p>
+	<img id="4-1" style="position: absolute; left: 350px; top: 360.5px;" src="images/tin.png"/>
+	<div id="4-2" style="position:absolute; left: 369px; top: 360.5px; width: 43.5px; height: 16px; background-color:#BB834C; border-radius:50%; "></div>
+	<img id="4-3" style="position:absolute; left:150px; top:250px; cursor:pointer; " src="images/spatula.png"/>
+</div>
+
+<div id="canvas5" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;5&nbsp;</span>
+	<p class="steptext">&nbsp;Measure the weight of metal tube with wet soil sample.</p>
+	<img id="8-0" style="position:absolute; left:275px; top:300px;" src="images/wm1.png" />
+	<img id="8-1" style="position:absolute; left:440px; top:420px;" src="images/tare.png" />
+	<img id="8-2" style="position:absolute; left:70px; top:385px;" src="images/tin.png" />
+	<div id="8-5" style="position:absolute; left: 91px; top: 385.5px; width: 40px; height: 14.5px; background-color:#BB834C; border-radius:50%;"></div>
+	<p id="p8-1" style="position:absolute; left:378px; top:375px;"></p>
+	<p id="p8-2" style="position:absolute; left:20px; top:480px; font-size:14px;">Weight of metal tube + wet soil, W<sub>2</sub> = _________ g</p>
+</div>
+
+<div id="canvas6" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext">&nbsp;Measure the height and diameter of the vane.</p>
+	<img id="ex6-1" style="position:absolute; left:400px; top:325px; width:31px;" title="Vane" src="images/vanes.png" />
+	<img id="ex6-2" style="position:absolute; left:250px; top:55px; width:70px;" title="Scale" src="images/scales.png" />
+	<p id="exp6-1" style="position:absolute; left:0px; top:415px; font-size:12px;">Height of the vane = _________cm</p>
+	<p id="exp6-2" style="position:absolute; left:0px; top:450px; font-size:12px;">Diameter of the vane = _________cm</p>
+	<!-- <img id="ex6-2" style="position:absolute; left:300px; top:105px; width:80px;" title="Scale" src="images/scaleWithReading.png" /> -->
+	<!-- <img id="ex6-2" style="position:absolute; left:300px; top:105px; width:80px; transform:rotate(90deg);" title="Scale" src="images/scaleWithReading.png" /> -->
+	<h1 id="exh6-1" style="position:absolute; left:0px; top:215px; color:grey; text-align:center; visibility:hidden;">Repeat the procedure for 2 more trials</h1>
+</div>
+
+<div id="canvas7" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;6&nbsp;</span>
+	<p class="steptext">&nbsp;Mount the specimen container on the Vane Shear test Apparatus.</p>
+	<img id="9-1" style="position:absolute; left:230px; top:120px; width:210px;" src="images/vane test apparatus.png" />
+	<img id="9-2" style="position:absolute; left:70px; top:385px;" title="Tin with soil" src="images/tinWithSoil.png" />
+	<img id="9-3" style="position:absolute; left:42.5px; top:385px; visibility:hidden;" src="images/hand.png" />
+</div>
+
+<div id="canvas8" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;7&nbsp;</span>
+	<p class="steptext">&nbsp;Now lower the shear vanes into the sample such that the top of the vane is at least 1cm below the top surface of the specimen.</p>
+	<img id="10-1" style="position:absolute; left:200px; top:120px; width:210px;" src="images/vaneShear.png" />
+	<img id="10-3" style="position:absolute; left: 281px; top: 330px; width: 52.5px; height: 55px;" src="images/tinWithSoil.png" />
+	<img id="10-2" style="position:absolute; left:297px; top:270px; " src="images/vane.png" />
+	<img id="10-4" style="position:absolute; left: 281px; top: 336px;" src="images/halfTin.png" />
+	<div id="10-5" style="position:absolute; left: 230px; top:120px; width: 140px; height: 53px; cursor:pointer"></div>
+	<img id="10-6" style="position:absolute; left: 420px; top: 80px; visibility:hidden;" src="images/zoom.png" />
+	<img id="10-7" style="position:absolute; left: 580px; top: 191px; visibility:hidden;" src="images/knobs.png" />
+	<img id="10-8" style="position:absolute; left: 505px; top: 130px; visibility:hidden;" src="images/topView.png" />
+	<p id="p10-1" style="position:absolute; left: 470px; top: 95px; visibility:hidden; font-weight:bold; color:red;" >Top view</p>
+	<!-- <img id="10-7" style="position:absolute; left: 580px; top: 182px; visibility:hidden;" src="images/zoomHand.png" /> -->
+</div>
+
+<div id="canvas9" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;8&nbsp;</span>
+	<p class="steptext">&nbsp;Note down the initial reading of the angle of twist as shown by the pointer in the instrument. </p>
+	<img id="11-1" style="position:absolute; left:100px; top:120px; width:210px;" src="images/vaneShear.png" />
+	<img id="11-3" style="position:absolute; left: 181px; top: 330px; width: 52.5px; height: 55px;" src="images/tinWithSoil.png" />
+	<img id="11-2" style="position:absolute; left:198.49px; top:300px;" src="images/vane.png" />
+	<img id="11-4" style="position:absolute; left: 181px; top: 336px;" src="images/halfTin.png" />
+	<img id="11-5" style="position:absolute; left: 400px; top: 150px; visibility:hidden;" src="images/scale.png" />
+	<img id="11-6" style="position:absolute; left: 460px; top: 143px; visibility:hidden;" src="images/final.png" />
+	<p id="p11-1" style="position:absolute; left: 407.5px; top: 176px; font-size:13px; font-weight:bold; visibility:hidden;">120</p>
+	<p id="p11-2" style="position:absolute; left: 462.5px; top: 177.5px; font-size:13px; font-weight:bold; visibility:hidden;">130</p>
+	<p id="p11-3" style="position:absolute; left: 509px; top: 177.5px; font-size:13px; font-weight:bold; visibility:hidden;">140</p>
+	<p id="p11-4" style="position:absolute; left: 380px; top: 350px; font-size:13px; visibility:hidden;"></p>
+	<div id="11-7" style="position:absolute; left: 185px; top: 215px; border:2px solid red; width:20px; height:20px; visibility:hidden;"></div>
+	<div id="11-8" style="position:absolute; left: 393px; top: 137.5px; border:2px solid red; width:160px; height:105px; visibility:hidden;"></div>
+</div>
+
+<div id="canvas10" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;9&nbsp;</span>
+	<p class="steptext">&nbsp;Start the Vane Shear apparatus and allow the vanes to rotate at a uniform speed of 0.1°/s until the specimen fails.</p>
+	<img id="12-1" style="position:absolute; left:100px; top:120px; width:210px;" src="images/vaneShear.png" />
+	<img id="12-3" style="position:absolute; left: 181px; top: 330px; width: 52.5px; height: 55px;" src="images/tinWithSoil.png" />
+	<img id="12-2" style="position:absolute; left:198.49px; top:300px;" src="images/vane.png" />
+	<img id="12-4" style="position:absolute; left: 181px; top: 336px;" src="images/halfTin.png" />
+	<img id="12-5" style="position:absolute; left: 400px; top: 150px; visibility:hidden;" src="images/scale.png" />
+	<img id="12-6" style="position:absolute; left: 460px; top: 143px; visibility:hidden;" src="images/final.png" />
+	<p id="p12-1" style="position:absolute; left: 407.5px; top: 176px; font-size:13px; font-weight:bold; visibility:hidden;">120</p>
+	<p id="p12-2" style="position:absolute; left: 462.5px; top: 177.5px; font-size:13px; font-weight:bold; visibility:hidden;">130</p>
+	<p id="p12-3" style="position:absolute; left: 509px; top: 177.5px; font-size:13px; font-weight:bold; visibility:hidden;">140</p>
+	<p id="p12-4" style="position:absolute; left: 380px; top: 350px; font-weight:bold; visibility:hidden;"></p>
+	<div id="12-7" style="position:absolute; left: 185px; top: 215px; border:2px solid red; width:20px; height:20px; visibility:hidden;"></div>
+	<div id="12-8" style="position:absolute; left: 393px; top: 137.5px; border:2px solid red; width:160px; height:105px; visibility:hidden;"></div>
+	<div id="12-9" style="position:absolute; left: 235px; top:120px; width: 40px; height: 53px; cursor:pointer"></div>
+	<div id="12-91" style="position:absolute; left: 248.5px; top: 161px; width: 40px; height: 53px; background-color:white; visibility:hidden;"></div>
+	<img id="12-10" style="position:absolute; left: 420px; top: 80px; visibility:hidden;" src="images/zoom.png" />
+	<!-- <img id="12-10" style="position:absolute; left: 420px; top: 120px; visibility:hidden;" src="images/wheel.png" /> -->
+	<!-- <img id="12-11" style="position:absolute; left: 550px; top: 185px; visibility:hidden;" src="images/knobs.png" /> -->
+	<img id="12-11" style="position:absolute; left: 543.5px; top: 155px; visibility:hidden; cursor:pointer;" src="images/knobs.png" />
+
+	<div id="12-11parent" style="position: relative; left: 520px; top: 60px; width: 120px; height: 100px; border-radius: 50%; transform: rotate(0deg); transition: transform 3s linear; visibility:hidden;">
+		<div id="12-11child" style="visibility:hidden;">
+			<img style="position:absolute; left: 5px; top: 17.5px;" src="images/handWithKnob.png" />
+		</div>
+	</div>
+	<!-- <img id="12-11" style="position:absolute; left: 539px; top: 114px; visibility:hidden;" src="images/knob.png" /> -->
+	<!-- <img id="12-11" style="position:absolute; left: 552px; top: 171px; visibility:hidden;" src="images/zoomHand.png" /> -->
+	<div id="12-12" style="position:absolute; left: 278.5px; top: 280px; height: 90px; width: 50px; border:3px solid red; border-radius: 50%; visibility:hidden;"></div>
+
+	<p id="p12-5" style="position: absolute; left: 370px; top: 300px; width: 350px; color:red; font-size:13px; font-weight:bold; visibility:hidden;">When the specimen fails, the strain indicator pointer will move backwards on the circular graduated scale and at this point stop the test.</p>
+
+</div>
+<!-- When the specimen fails, the strain indicator pointer will move backwards on the circular graduated scale and at this point stop the test  -->
+
+<div id="canvas11" class="simsubscreen" style="visibility:hidden;">
+	<strong class="incanvas">STEP</strong>
+	<span class="circlebg">&nbsp;10&nbsp;</span>
+	<p class="steptext">&nbsp;Note down the final reading of the angle of twist as shown by the pointer.</p>
+	<img id="13-1" style="position:absolute; left:100px; top:120px; width:210px;" src="images/vaneShear.png" />
+	<img id="13-3" style="position:absolute; left: 181px; top: 330px; width: 52.5px; height: 55px;" src="images/tinWithSoil.png" />
+	<img id="13-2" style="position:absolute; left:198.49px; top:300px;" src="images/vane.png" />
+	<img id="13-4" style="position:absolute; left: 181px; top: 336px;" src="images/halfTin.png" />
+	<img id="13-5" style="position:absolute; left: 400px; top: 150px; visibility:hidden;" src="images/scale.png" />
+	<img id="13-6" style="position:absolute; left: 460px; top: 143px; visibility:hidden;" src="images/final.png" />
+	<img id="13-7" style="position:absolute; left: 430px; top: 143px; height:40px; visibility:hidden;" src="images/final.png" />
+	<p id="p13-1" style="position:absolute; left: 407.5px; top: 176px; font-size:13px; font-weight:bold; visibility:hidden;">120</p>
+	<p id="p13-2" style="position:absolute; left: 462.5px; top: 177.5px; font-size:13px; font-weight:bold; visibility:hidden;">130</p>
+	<p id="p13-3" style="position:absolute; left: 509px; top: 177.5px; font-size:13px; font-weight:bold; visibility:hidden;">140</p>
+	<p id="p13-4" style="position:absolute; left: 350px; top: 250px; font-size:13px; visibility:hidden;"></p>
+	<p id="p13-5" style="position:absolute; left: 350px; top: 300px; font-size:13px; visibility:hidden;"></p>
+	<p id="p13-6" style="position:absolute; left: 350px; top: 350px; font-size:13px; visibility:hidden;"></p>
+	<p id="eq13" type="text" style="position:absolute; left: 450px; top: 400px; font-size:13px; visibility:hidden;">=</p>
+	<input id="in13" type="text" style="position:absolute; left: 465px; top: 412.5px; font-size:13px; visibility:hidden; border:none; border-bottom:2px solid black; width:60px;">
+	<button id="check13" type="text" style="position:absolute; left: 560px; top: 400px; font-size:13px; visibility:hidden; cursor:pointer;">CHECK</button>
+	<span id="mark" style="position:absolute; left: 535px; top: 400px; font-size:22px;"></span>
+</div>
+
+<div id="canvas12" class="simsubscreen" style="visibility:hidden;">
+	<h3 style="position:absolute; left:100px; top:70px;">&nbsp;Observations : </h3>
+	<table style="position:absolute; left:115px; top:120px; border:1px solid black; font-size:14px;  text-align:left; width:60%;">
+	<tr>
+	<td style="border:1px solid black; padding:5px;">Trial No.</td>
+	<td style="border:1px solid black; padding:10px;">1</td>
+	</tr>
+	<tr>
+	<td style="border:1px solid black; padding:5px;">Initial angle of twist</td>
+	<td id="t11-1" style="border:1px solid black; padding:10px;"></td>
+	</tr>
+	<tr>
+	<td style="border:1px solid black; padding:5px;">Final angle of twist</td>
+	<td id="t11-2" style="border:1px solid black; padding:10px;"></td>
+	</tr>
+	<tr>
+	<td style="border:1px solid black; padding:5px;">Angle of twist</td>
+	<td id="t11-3" style="border:1px solid black; padding:10px;"></td>
+	</tr>
+	</table>
+</div>
+
+<div id="canvas13" class="simsubscreen" style="visibility:hidden;">
+	<h1 id="h12-1" style="position:absolute; left:0px; top:215px; color:grey; text-align:center; display:none;">Repeat the procedure for 2 more trials </h1>
+</div>
+
+<div id="canvas14" class="simsubscreen" style="visibility:hidden;">
+	<h3 style="position:absolute; left:40px; top:70px;">&nbsp;Observations : </h3>
+	<table id="totalTable" style="position:absolute; left:60px; top:130px; border:1px solid black; font-size:14px;  text-align:center; ">
+		<tr>
+			<td style="border:1px solid black; padding:5px;">Trial No.</td>
+			<td style="border:1px solid black; padding:5px;">Initial angle of twist</td>
+			<td style="border:1px solid black; padding:5px;">Final angle of twist</td>
+			<td style="border:1px solid black; padding:5px;">Angle of twist</td>
+		</tr>
+	</table>
+</div>
+
+<div id="canvas15" class="simsubscreen"  style="visibility:hidden">
+	<center><h2 id="step16" style="font-family:verdana;  position:absolute; left:200px; top:10px; ">Characteristic Curve<h2></center></p>
+	<div id="chartContainer" style="position:absolute; height: 410px; width: 560px; left:50px; top:70px;"></div>
+
+	<span class="tooltip" style="border-bottom:1px dotted ; color:red; position:absolute; left:-10px; top:85px; cursor:pointer;"><strong>Description</strong>
+	<span  class="tooltiptext" style="font-size:14px; text-align:justify;">The values of Torque for each trial is derived from this graph by drawing the vertical and its corresponding horizontal component.</span></span>
+</div>
+
+<div id="canvas16" class="simsubscreen" style="visibility:hidden;">
+	<h3 style="position:absolute; left:-50px; top:-20px;">&nbsp;Observations : </h3>
+	<table id="totalTable2" style="position:absolute; left:-40px; top:30px; border:1px solid black; font-size:14px;  text-align:center; ">
+		<tr>
+			<td style="border:1px solid black; padding:5px;">Trial No.</td>
+			<td style="border:1px solid black; padding:5px;">Initial angle of twist</td>
+			<td style="border:1px solid black; padding:5px;">Final angle of twist</td>
+			<td style="border:1px solid black; padding:5px;">Angle of twist, &theta; (deg)</td>
+			<td style="border:1px solid black; padding:5px;">Torque, T (g/m)</td>
+			<td style="border:1px solid black; padding:5px;">Undrained shear strength,</br>
+				 T<sub>f</sub> (g/cm<sup>2</sup>) = <span class="frac"><sup>T</sup><span>&frasl;</span><sub>[&pi;d<sup>2</sup>(<span class="frac"><sup>H</sup><span>&frasl;</span><sub>2</sub></span> + <span class="frac"><sup>D</sup><span>&frasl;</span><sub>6</sub></span>)] </sub></span>
+			</td>
+			<td style="border:1px solid black; padding:5px;">Undrained shear strength,</br>
+				 T<sub>f</sub> (KN/cm<sup>2</sup>) =<br> T<sub>f</sub> (g/cm<sup>2</sup>)x0.0981
+			</td>
+		</tr>
+	</table>
+
+	<button id="check" class="clsBtn" style="position:absolute; left:350px; top:290px;">CHECK</button>
+	<button id="result" class="clsBtn" style="position:absolute; left:430px; top:290px;">RESULT</button>
+
+	&nbsp;<span class="tooltip" style="border-bottom:1px dotted ; color:red;left:-40px; top:310px; cursor:pointer;"><strong>Variables used in calculation</strong>
+		<span  class="tooltiptext" style="font-size:14px; text-align:justify;">
+			 Diameter of metal tube, d = 3.8cm<br><br>
+			 Height of metal tube, h = 7.5cm<br><br>
+			 Volume of the metal tube, V = <span class="frac"><sup>&pi;d<sup>2</sup>h</sup><span>&frasl;</span><sub>4</sub></span> = 85.06cm<sup>3</sup> <br><br>
+			 Height of vane, H = 1.25cm<br><br>
+			 Diameter of vane, D  = 1.25cm
+		</span>
+	</span>
+	<p id="p15-1" style="visibility:hidden; position:absolute; left:-30px; top:360px; font-size:14px; text-align:justify;"><b style="font-size:18px;"> Inference: </b><br><br>Vane shear test is one of the most commonly used in situ tests conducted to determine the unconfined shear strength of clay in its site conditions.</p>
+</div>
+
+<div id="questDiv" style="position:absolute; font-size:14px; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden;">
+	<p id="q"></p>
+	<select id="answer" ></select>
+	<p id="a"></p>
+</div>
+
+<div id="nav">
+<img id="nextButton" onclick="navNext()" src="images/Next.png" />
+</div>
+
+<img class ="" id="arrow1" style="visibility:hidden;" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2020 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+</div>
 </body>
 </html>
