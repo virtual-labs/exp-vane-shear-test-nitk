@@ -64,8 +64,7 @@
         "a": "The drainage path is not double drainage, since water is not allowed to pass through soil sample. ",
         "b": "In an undrained drainage path the water is not allowed to pass through soil sample.Vane shear test is used to determine undrained shear strength of fully saturated clay.",
         "c": "For vane shear test the soil is fully saturated, hence it is not partially drained.",
-        "d": "The correct answer is mentioned in the  options provided above.
-"
+        "d": "The correct answer is mentioned in the  options provided above."
       },
       "correctAnswer": "b",
       "difficulty": "intermediate"
@@ -80,7 +79,7 @@
       },
       "explanations": {
         "a": "A very soft and sensitive clay is used whose sensitivity values range from 1 to 100 are used for vane shear test.",
-        "b": "Vane shear test cannot be conducted on stiff and fissured clay. If failure is horizontal , the test does not give accurate results.",
+        "b": "Vane shear test cannot be conducted on stiff and fissured clay. If failure is horizontal, the test does not give accurate results.",
         "c": "Sandy soil is coarse textured soil which has low water holding capacity. Due to which failure will be irregular.",
         "d": "Only one option mentioned above is correct."
       },
