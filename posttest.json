@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which is the most commonly used in-situ test for shear strength determination?",
+      "answers": {
+        "a": "Borehole shear test",
+        "b": "Vane shear test",
+        "c": "Both a and b",
+        "d": "Neither a nor b"
+      },
+      "explanations": {
+        "a": "Borehole shear in-situ test, which needs drilled boring and uses   plates that load the side boring.",
+        "b": "Vane shear test is the most commonly used in-situ test and also in laboratory.",
+        "c": "The most commonly used in-situ test is vane shear. Hence the answer can not be both a and b.",
+        "d": "The most commonly used in-situ test is vane shear. Hence the answer can not be either a and b."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the parameter that is noted down after the completion of the vane shear test?",
+      "answers": {
+        "a": "Shear strength",
+        "b": "Angle of shear",
+        "c": "Angle of twist",
+        "d": "Sensitivity"
+      },
+      "explanations": {
+        "a": "Shear strength is the result obtained from the vane shear experiment.",
+        "b": "In vane shear test angle of shear parameter is not used.",
+        "c": "In this test vane is inserted to soil and rotated at constant speed until a pointer indicating angle of twist rotates backwards. Then the angle of twist is noted down.",
+        "d": "From vane shear test sensitivity can be determined."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If the sensitivity of clay lies between 4-8 it is classified as ________ .",
+      "answers": {
+        "a": "Insensitive clays",
+        "b": "Quick clays",
+        "c": "Very sensitive clays",
+        "d": "Non sensitive clays"
+      },
+      "explanations": {
+        "a": "For insensitive clay the value of sensitivity is 1.",
+        "b": "If the value of sensitivity ranges between 8 - 64 then it is considered as quick clay.",
+        "c": "If the value of sensitivity ranges between 4 - 8 then it is considered as very sensitive clay.",
+        "d": "Soils generally have sensitivity values of 1 or greater than 1. The sensitivity value less than 1 is considered as non sensitive clay."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The minimum depth of penetration of the top of the vane from the top surface of soil is ________ .",
+      "answers": {
+        "a": "10cm",
+        "b": "12mm",
+        "c": "1.5cm",
+        "d": "10mm"
+      },
+      "explanations": {
+        "a": "The penetration of vane on the top surface of  soil should be minimum. It should not go up to 10cm.",
+        "b": "The penetration of the vane on the top surface of  soil should be minimum. It should not go up to 12mm.",
+        "c": "The penetration should not be 1.5cm.",
+        "d": "The penetration of the vane should be minimum, it should not go deeper into the soil. It should be 10mm."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Vane shear test is carried out to find the _________ of clay.",
+      "answers": {
+        "a": "Shear strength",
+        "b": "Compressive strength",
+        "c": "Rigidity",
+        "d": "Consolidation"
+      },
+      "explanations": {
+        "a": "Vane shear test is used to determine the shear strength of soil.",
+        "b": "Compressive strength of soil can be determined by Triaxial or Unconfined compression test.",
+        "c": "Rigidity of soil is determined by oedometer and direct shear test.",
+        "d": " Consolidation of soil can be determined by consolidation test."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    }
+  ]
+}
