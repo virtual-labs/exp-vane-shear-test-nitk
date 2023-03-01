@@ -71,7 +71,9 @@
 <center>
 <!-- <span>Sensitivity = </span> -->
 <img src="https://latex.codecogs.com/png.image?\inline&space;\large&space;\dpi{100}\textrm{Sensitivity&space;=}" title="https://latex.codecogs.com/png.image?\inline \large \dpi{100}\textrm{Sensitivity =}" />
-<img src="https://latex.codecogs.com/png.image?\inline&space;\LARGE&space;\dpi{100}\frac{\textrm{Unconfined&space;shear&space;stength&space;of&space;soil&space;in&space;undisturbed&space;state}}{\textrm{Unconfined&space;shear&space;stength&space;of&space;soil&space;in&space;remoulded&space;state}}" title="https://latex.codecogs.com/png.image?\inline \LARGE \dpi{100}\frac{\textrm{Unconfined shear stength of soil in undisturbed state}}{\textrm{Unconfined shear stength of soil in remoulded state}}" /></br>
+<img src="https://latex.codecogs.com/png.image?\inline&space;\LARGE&space;\dpi{100}\frac{\textrm{Unconfined&space;shear&space;stength&space;of&space;soil&space;in&space;undisturbed&space;state}}{\textrm{Unconfined&space;shear&space;stength&space;of&space;soil&space;in&space;remoulded&space;state}}" title="https://latex.codecogs.com/png.image?\inline \LARGE \dpi{100}\frac{\textrm{Unconfined shear stength of soil in undisturbed state}}{\textrm{Unconfined shear stength of soil in remoulded state}}" /></br></center>
+
+<center>
 
 |    **Classification**    | **Sensitivity** |
 |:------------------------|:---------------:|
