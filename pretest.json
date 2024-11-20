@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "The vane shear test is conducted on which type of soils?",
+      "answers": {
+        "a": "Sand soils",
+        "b": "Loam soils",
+        "c": "Cohesive soils",
+        "d": "Non-cohesive soils"
+      },
+      "explanations": {
+        "a": "Generally sandy soil is coarse textured soil which has low water holding capacity. Vane shear is conducted to determine undrained shear strength.",
+        "b": "Loam is the soil which contains sand, hence it is not suitable for vane shear test.",
+        "c": "Vane shear test is used for cohesive soil like clay, because of its water holding capacity and the failure surface will be regular which will be easy to determine shear strength of soil.",
+        "d": "Non-cohesive soil is not used in the Vane shear test because of its granular property, due to which the failure surface will be irregular and it is hard to determine the shear strength of soil."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following instrument is not used in the conduction of vane shear test?",
+      "answers": {
+        "a": "Weighing scale",
+        "b": "Measuring jar",
+        "c": "Scale",
+        "d": "Shear vane"
+      },
+      "explanations": {
+        "a": "Weighing machine is used to measure metal tubes with and without soil.",
+        "b": "Measuring jar is not used in this experiment, because there is no necessity of adding measured quantities of water to the soil.",
+        "c": "Scale is required to measure the height and diameter of Vane.",
+        "d": "Shear vane is the apparatus used in the vane shear test."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Vane shear test is suitable for soils having shear strength less than _________ .",
+      "answers": {
+        "a": "0.5 kg/cm<sup>2</sup>",
+        "b": "0.3 kg/cm<sup>2</sup>",
+        "c": "0.58 kg/cm<sup>2</sup>",
+        "d": "0.9 kg/cm<sup>2</sup>"
+      },
+      "explanations": {
+        "a": "In vane shear test soil of shear strength 0.5kg/cm<sup>2</sup> is not suitable.",
+        "b": "The shear strength of soil in vane shear test should be less than 0.3kg/cm<sup>2</sup> to get accurate results.",
+        "c": "The soil with shear strength of 0.58kg/cm<sup>2</sup> is not suitable for vane shear test, which is greater than 0.3kg/cm<sup>2</sup>.",
+        "d": "The soil with shear strength of 0.9kg/cm<sup>2</sup> is not suitable for vane shear test, where the value should be less than 0.3kg/cm<sup>2</sup>."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Drainage path used in laboratory vane shear test is _________ .",
+      "answers": {
+        "a": "Double drainage",
+        "b": "Undrained",
+        "c": "Partially drained",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "The drainage path is not double drainage, since water is not allowed to pass through soil sample. ",
+        "b": "In an undrained drainage path the water is not allowed to pass through soil sample.Vane shear test is used to determine undrained shear strength of fully saturated clay.",
+        "c": "For vane shear test the soil is fully saturated, hence it is not partially drained.",
+        "d": "The correct answer is mentioned in the  options provided above."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The vane shear strength of determining in-situ shear strength of",
+      "answers": {
+        "a": "Very soft and sensitive clay",
+        "b": "Stiff and fissured clay",
+        "c": "Sandy soil",
+        "d": "All the above"
+      },
+      "explanations": {
+        "a": "A very soft and sensitive clay is used whose sensitivity values range from 1 to 100 are used for vane shear test.",
+        "b": "Vane shear test cannot be conducted on stiff and fissured clay. If failure is horizontal, the test does not give accurate results.",
+        "c": "Sandy soil is coarse textured soil which has low water holding capacity. Due to which failure will be irregular.",
+        "d": "Only one option mentioned above is correct."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    }
+  ]
+}
